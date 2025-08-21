@@ -1,0 +1,19 @@
+{
+  "name": "template-react-node",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:client": "pnpm --filter template-client dev",
+    "dev:server": "pnpm --filter template-server dev",
+    "dev": "concurrently \"pnpm dev:client\" \"pnpm dev:server\""
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.0",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
