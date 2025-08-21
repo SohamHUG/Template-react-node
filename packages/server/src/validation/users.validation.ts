@@ -1,14 +1,13 @@
 import { z } from "zod";
 
 export const userValidation = z.object({
-    username: z.string().min(1, { message: "Le nom est requis" }),
+    username: z.string().min(1, { message: "Username is required" }),
     password: z.string()
-        .min(6, { message: "Le mot de passe doit faire au moins 6 caractères" })
-        .regex(/[0-9]/, { message: "Le mot de passe doit contenir au moins un chiffre" })
-        .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "Le mot de passe doit contenir au moins un symbole" }),
-    email: z.email({ message: "Adresse email invalide" })
+        .min(6, { message: "Password must be at least 6 characters long" })
+        .regex(/[0-9]/, { message: "Password must contain at least one number" })
+        .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "Password must contain at least one symbol" }),
+    email: z.email({ message: "Invalid email address" })
     /* .refine(async (email): boolean => {
-        // On vérifie que l'email est unique dans la db par exemple
-        // C'est une fonction pour faire ses verifications "custom"
+
     }) */
 });
